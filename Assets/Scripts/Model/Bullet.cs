@@ -1,3 +1,4 @@
+using Model.Static;
 using UnityEngine;
 
 namespace Model
@@ -40,6 +41,11 @@ namespace Model
                 else
                 {
                     rb.velocity = Vector2.zero;
+                    Circle temp = gameObject.AddComponent<Circle>();
+                    transform.position = GameMetrics.GetNearPoint(transform.position,
+                        circle.transform.position);
+                    temp.Init(_color);
+                    Destroy(rb);
                     Destroy(this);
                 }
             }

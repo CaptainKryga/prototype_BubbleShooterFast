@@ -28,7 +28,7 @@ namespace Model.EditorMap
             if (key != KeyCode.G)
                 return;
 
-            SpriteRenderer[][] map = _generateMap.Map;
+            Circle[][] map = _generateMap.Map;
             _export = "";
 
             for (int y = 0; y < map.Length; y++)
@@ -37,7 +37,7 @@ namespace Model.EditorMap
                 {
                     if (y % 2 != 0 && x + 1 == map[y].Length)
                         continue;
-                    _export += _dataGame.GetIdColor(map[y][x].color);
+                    _export += _dataGame.GetIdColor(map[y][x].Color);
                 }
                 
                 if (y + 1 < map.Length)

@@ -33,8 +33,8 @@ namespace Model.EditorMap
                 _camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if(hit.collider != null)
             {
-                SpriteRenderer sr = hit.collider.GetComponent<SpriteRenderer>();
-                if (sr) sr.color = _dataGame.Colors[Random.Range(0, _dataGame.Colors.Length)];
+                Circle circle = hit.collider.GetComponent<Circle>();
+                if (circle) circle.Color = _dataGame.Colors[Random.Range(0, _dataGame.Colors.Length)];
             }
         }
     }

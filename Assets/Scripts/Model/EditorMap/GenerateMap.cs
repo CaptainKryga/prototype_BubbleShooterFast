@@ -10,20 +10,20 @@ namespace Model.EditorMap
         
         //parent and start point
         [SerializeField] private Transform parent;
-        [SerializeField] private SpriteRenderer prefab;
+        [SerializeField] private Circle prefab;
 
-        private SpriteRenderer[][] _map;
+        private Circle[][] _map;
 
-        public SpriteRenderer[][] Map { get => _map; }
+        public Circle[][] Map { get => _map; }
         
         private void Start()
         {
-            _map = new SpriteRenderer[GameMetrics.SizeMapY][];
+            _map = new Circle[GameMetrics.SizeMapY][];
             
             Vector3 startPos = parent.transform.position;
             for (int y = 0; y < GameMetrics.SizeMapY; y++)
             {
-                _map[y] = new SpriteRenderer[GameMetrics.SizeMapX];
+                _map[y] = new Circle[GameMetrics.SizeMapX];
                 for (int x = 0; x < GameMetrics.SizeMapX; x++)
                 {
                     if (y % 2 != 0 && x + 1 == GameMetrics.SizeMapX)
@@ -34,7 +34,7 @@ namespace Model.EditorMap
                         y * GameMetrics.KoofHeightY);
                     
                     _map[y][x] = Instantiate(prefab, sp, Quaternion.identity, parent);
-                    _map[y][x].color = _dataGame.ColorDisable;
+                    _map[y][x].Color = _dataGame.ColorDisable;
                 }
             }
         }

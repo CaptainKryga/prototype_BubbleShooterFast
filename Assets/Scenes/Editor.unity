@@ -6329,7 +6329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
   parent: {fileID: 1956659063}
-  prefab: {fileID: 6493898641210031939, guid: a8021610752190749bb069e896ecfb4d, type: 3}
+  prefab: {fileID: 3966261872442790897, guid: a8021610752190749bb069e896ecfb4d, type: 3}
 --- !u!1 &2133632439
 GameObject:
   m_ObjectHideFlags: 0

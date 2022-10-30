@@ -1166,8 +1166,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuCompany, Assembly-CSharp
+      - m_Target: {fileID: 1960948316}
+        m_TargetAssemblyTypeName: View.Main.MenuCompany, Assembly-CSharp
         m_MethodName: OnToggle_SetLevel
         m_Mode: 3
         m_Arguments:
@@ -1786,8 +1786,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuMainBase, Assembly-CSharp
+      - m_Target: {fileID: 1960948316}
+        m_TargetAssemblyTypeName: View.Main.MenuMainBase, Assembly-CSharp
         m_MethodName: OnClick_Back
         m_Mode: 1
         m_Arguments:
@@ -2454,8 +2454,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuRandom, Assembly-CSharp
+      - m_Target: {fileID: 1086566237}
+        m_TargetAssemblyTypeName: View.Main.MenuRandom, Assembly-CSharp
         m_MethodName: OnClick_Start
         m_Mode: 1
         m_Arguments:
@@ -2858,8 +2858,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuMainBase, Assembly-CSharp
+      - m_Target: {fileID: 1086566237}
+        m_TargetAssemblyTypeName: View.Main.MenuMainBase, Assembly-CSharp
         m_MethodName: OnClick_Back
         m_Mode: 1
         m_Arguments:
@@ -3265,8 +3265,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuCompany, Assembly-CSharp
+      - m_Target: {fileID: 1960948316}
+        m_TargetAssemblyTypeName: View.Main.MenuCompany, Assembly-CSharp
         m_MethodName: OnToggle_SetLevel
         m_Mode: 3
         m_Arguments:
@@ -3403,8 +3403,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuCompany, Assembly-CSharp
+      - m_Target: {fileID: 1960948316}
+        m_TargetAssemblyTypeName: View.Main.MenuCompany, Assembly-CSharp
         m_MethodName: OnToggle_SetLevel
         m_Mode: 3
         m_Arguments:
@@ -3538,8 +3538,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuMain, Assembly-CSharp
+      - m_Target: {fileID: 504010120}
+        m_TargetAssemblyTypeName: View.Main.MenuMain, Assembly-CSharp
         m_MethodName: OnClick_Exit
         m_Mode: 1
         m_Arguments:
@@ -4022,8 +4022,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuMainBase, Assembly-CSharp
+      - m_Target: {fileID: 468973362}
+        m_TargetAssemblyTypeName: View.Main.MenuMainBase, Assembly-CSharp
         m_MethodName: OnClick_Back
         m_Mode: 1
         m_Arguments:
@@ -4156,8 +4156,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuCompany, Assembly-CSharp
+      - m_Target: {fileID: 1960948316}
+        m_TargetAssemblyTypeName: View.Main.MenuCompany, Assembly-CSharp
         m_MethodName: OnClick_Start
         m_Mode: 1
         m_Arguments:
@@ -4290,8 +4290,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuMain, Assembly-CSharp
+      - m_Target: {fileID: 504010120}
+        m_TargetAssemblyTypeName: View.Main.MenuMain, Assembly-CSharp
         m_MethodName: OnClick_Authors
         m_Mode: 1
         m_Arguments:
@@ -4559,8 +4559,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuMain, Assembly-CSharp
+      - m_Target: {fileID: 504010120}
+        m_TargetAssemblyTypeName: View.Main.MenuMain, Assembly-CSharp
         m_MethodName: OnClick_NewGame
         m_Mode: 1
         m_Arguments:
@@ -4828,8 +4828,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuNewGame, Assembly-CSharp
+      - m_Target: {fileID: 1299249530}
+        m_TargetAssemblyTypeName: View.Main.MenuNewGame, Assembly-CSharp
         m_MethodName: OnClick_Random
         m_Mode: 1
         m_Arguments:
@@ -5232,8 +5232,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuMainBase, Assembly-CSharp
+      - m_Target: {fileID: 1299249530}
+        m_TargetAssemblyTypeName: View.Main.MenuMainBase, Assembly-CSharp
         m_MethodName: OnClick_Back
         m_Mode: 1
         m_Arguments:
@@ -5504,8 +5504,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuCompany, Assembly-CSharp
+      - m_Target: {fileID: 1960948316}
+        m_TargetAssemblyTypeName: View.Main.MenuCompany, Assembly-CSharp
         m_MethodName: OnToggle_SetLevel
         m_Mode: 3
         m_Arguments:
@@ -6044,8 +6044,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Main.MenuNewGame, Assembly-CSharp
+      - m_Target: {fileID: 1299249530}
+        m_TargetAssemblyTypeName: View.Main.MenuNewGame, Assembly-CSharp
         m_MethodName: OnClick_Company
         m_Mode: 1
         m_Arguments:

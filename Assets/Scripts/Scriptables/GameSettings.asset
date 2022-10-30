@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   IsCompany: 1
-  LevelId: 0
+  LevelId: 3

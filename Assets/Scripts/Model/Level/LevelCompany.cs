@@ -11,7 +11,7 @@ namespace Model.Level
         [SerializeField] private DataGame _dataGame;
 
         [SerializeField] private Transform startInstance;
-        [SerializeField] private SpriteRenderer prefab;
+        [SerializeField] private Circle prefab;
         public override void InitLevel(int levelId)
         {
             GenerateMapFromString(_dataCompany.Levels[levelId]);
@@ -30,7 +30,7 @@ namespace Model.Level
 
                     Instantiate(prefab, 
                         startInstance.position + new Vector3(y % 2 != 0 ? x + GameMetrics.KoofWeightX : x, y * GameMetrics.KoofHeightY),
-                        Quaternion.identity, startInstance).color = _dataGame.Colors[num];
+                        Quaternion.identity, startInstance).Color = _dataGame.Colors[num];
                 }
             }
         }

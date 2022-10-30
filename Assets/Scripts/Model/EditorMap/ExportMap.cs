@@ -35,8 +35,13 @@ namespace Model.EditorMap
             {
                 for (int x = 0; x < map[y].Length; x++)
                 {
+                    if (y % 2 != 0 && x + 1 == map[y].Length)
+                        continue;
                     _export += _dataGame.GetIdColor(map[y][x].color);
                 }
+                
+                if (y + 1 < map.Length)
+                    _export += '#';
             }
         }
     }

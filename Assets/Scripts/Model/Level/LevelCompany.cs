@@ -25,7 +25,7 @@ namespace Model.Level
                 for (int x = 0; x < parse[y].Length; x++)
                 {
                     int num = parse[y][x] - '0';
-                    if (num < 1 || num > _dataGame.Colors.Length)
+                    if (num < 0 || num > _dataGame.Colors.Length)
                         continue;
 
                     Instantiate(prefab, 

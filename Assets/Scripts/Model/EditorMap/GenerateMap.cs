@@ -26,8 +26,14 @@ namespace Model.EditorMap
                 _map[y] = new SpriteRenderer[GameMetrics.SizeMapX];
                 for (int x = 0; x < GameMetrics.SizeMapX; x++)
                 {
-                    _map[y][x] = Instantiate(prefab, new Vector3(startPos.x + x, startPos.y + y), 
-                        Quaternion.identity, parent);
+                    if (y % 2 != 0 && x + 1 == GameMetrics.SizeMapX)
+                        continue;
+
+                    Vector3 sp = startPos + new Vector3(
+                        y % 2 != 0 ? x + GameMetrics.KoofWeightX : x,
+                        y * GameMetrics.KoofHeightY);
+                    
+                    _map[y][x] = Instantiate(prefab, sp, Quaternion.identity, parent);
                     _map[y][x].color = _dataGame.ColorDisable;
                 }
             }

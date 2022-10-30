@@ -9,6 +9,7 @@ namespace Model
         private Color _color;
 
         public Circle[] Nears;
+        public bool IsStatic;
         
         public Color Color
         {
@@ -23,13 +24,9 @@ namespace Model
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _color = _spriteRenderer.color;
         }
-
-        public void Init(Color color)
-        {
-            _color = color;
-        }
-
+        
         public bool isTest;
         private void Update()
         {
@@ -39,6 +36,15 @@ namespace Model
                 for (int x = 0; x < Nears.Length; x++)
                     if (Nears[x])
                         Nears[x].Color = Color.white;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var near in Nears)
+            {
+                if (near && near.Color == _color)
+                    Destroy(near.gameObject);
             }
         }
     }

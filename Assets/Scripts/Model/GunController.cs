@@ -1,4 +1,3 @@
-using System;
 using Controller;
 using Scriptables;
 using UnityEngine;
@@ -40,7 +39,6 @@ namespace Model
 
         public void InputKeyCode(KeyCode keyCode, bool flag, Vector3 mousePosition)
         {
-            Debug.Log("click: " + keyCode);
             if (keyCode == KeyCode.Mouse0 && flag)
             {
                 Vector2 vec = (_camera.ScreenToWorldPoint(Input.mousePosition) - _gunPoint.position);

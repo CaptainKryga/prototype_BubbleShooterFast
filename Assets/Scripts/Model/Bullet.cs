@@ -44,10 +44,38 @@ namespace Model
                     Circle temp = gameObject.AddComponent<Circle>();
                     transform.position = GameMetrics.GetNearPoint(transform.position,
                         circle.transform.position);
-                    temp.Init(_color);
+                    temp.Nears = new Circle[6];
+                    SetupNeighbors(temp);
+                    temp.IsStatic = true;
+                    
                     Destroy(rb);
                     Destroy(this);
                 }
+            }
+        }
+
+        private void SetupNeighbors(Circle circle)
+        {
+            //sphere raycast
+            Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, 1f);
+            Debug.Log(enemies.Length);
+            foreach (var en in enemies)
+            {
+                Circle temp = en.GetComponent<Circle>();
+                if (temp && temp.IsStatic)
+                {
+                    int index = GameMetrics.GetNeighborIndex(temp, circle);
+                    temp.Nears[index] = circle;
+                    index = GameMetrics.GetNeighborIndex(circle, temp);
+                    circle.Nears[index] = temp;
+
+                    if (temp.Color == _color)
+                    {
+                        Destroy(circle.gameObject);
+                        Destroy(gameObject);
+                    }
+                }
+                Debug.Log(en.name);
             }
         }
     }

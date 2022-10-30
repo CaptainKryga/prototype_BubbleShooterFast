@@ -1,5 +1,4 @@
-﻿using System;
-using Model.Static;
+﻿using Model.Static;
 using Scriptables;
 using UnityEngine;
 
@@ -39,6 +38,8 @@ namespace Model.Level
                         Quaternion.identity, startInstance);
                     
                     _map[y][x].Color = _dataGame.Colors[num];
+                    _map[y][x].name = "coord: " + x + " " + y;
+                    _map[y][x].IsStatic = true;
                 }
             }
             

@@ -23,7 +23,7 @@ namespace Model.EditorMap
             _customInput.InputKeyCode_Action -= Export;
         }
 
-        private void Export(KeyCode key, bool flag)
+        private void Export(KeyCode key, bool flag, Vector3 mousePosition)
         {
             if (key != KeyCode.G)
                 return;

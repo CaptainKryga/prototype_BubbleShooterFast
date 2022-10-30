@@ -34,7 +34,7 @@ namespace Model.EditorMap
             if(hit.collider != null)
             {
                 SpriteRenderer sr = hit.collider.GetComponent<SpriteRenderer>();
-                if (sr) sr.color = _dataGame.Colors[Random.Range(0, _dataGame.Colors.Length - 1)];
+                if (sr) sr.color = _dataGame.Colors[Random.Range(0, _dataGame.Colors.Length)];
             }
         }
     }

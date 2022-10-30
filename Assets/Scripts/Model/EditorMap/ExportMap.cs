@@ -1,18 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
+using Controller;
+using Scriptables;
 using UnityEngine;
 
-public class ExportMap : MonoBehaviour
+namespace Model.EditorMap
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ExportMap : MonoBehaviour
     {
+        [SerializeField] private GameData _gameData;
         
-    }
+        [SerializeField] private CustomInput _customInput;
+        [SerializeField] private GenerateMap _generateMap;
 
-    // Update is called once per frame
-    void Update()
-    {
+        [SerializeField] private string _export;
         
+        private void OnEnable()
+        {
+            _customInput.InputKeyCode_Action += Export;
+        }
+
+        private void OnDisable()
+        {
+            _customInput.InputKeyCode_Action -= Export;
+        }
+
+        private void Export(KeyCode key, bool flag)
+        {
+            if (key != KeyCode.G)
+                return;
+
+            SpriteRenderer[][] map = _generateMap.Map;
+            _export = "";
+
+            for (int y = 0; y < map.Length; y++)
+            {
+                for (int x = 0; x < map[y].Length; x++)
+                {
+                    _export += _gameData.GetIdColor(map[y][x].color);
+                }
+            }
+        }
     }
 }

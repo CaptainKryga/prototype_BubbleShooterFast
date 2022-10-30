@@ -14,6 +14,8 @@ namespace Model.EditorMap
 
         private SpriteRenderer[][] _map;
 
+        public SpriteRenderer[][] Map { get => _map; }
+        
         private void Start()
         {
             _map = new SpriteRenderer[GameMetrics.SizeMapY][];

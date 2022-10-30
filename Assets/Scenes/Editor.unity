@@ -1329,8 +1329,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2097492131}
-  - {fileID: 848599797}
   - {fileID: 1336086695}
+  - {fileID: 848599797}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2256,6 +2256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 848599797}
+  - component: {fileID: 848599798}
   m_Layer: 0
   m_Name: Export
   m_TagString: Untagged
@@ -2276,8 +2277,24 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 495675992}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &848599798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848599796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56cfb4fbba0148f4a8781d93bd3b87bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameData: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
+  _customInput: {fileID: 1144758613}
+  _generateMap: {fileID: 2097492132}
+  _export: 
 --- !u!1 &915519057
 GameObject:
   m_ObjectHideFlags: 0
@@ -3462,7 +3479,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 495675992}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1336086696
 MonoBehaviour:

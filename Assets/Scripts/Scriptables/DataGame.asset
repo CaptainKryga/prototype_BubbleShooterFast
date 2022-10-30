@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52cb9cdaf1042fe43a0588bf51848573, type: 3}
-  m_Name: GameData
+  m_Name: DataGame
   m_EditorClassIdentifier: 
   Colors:
   - {r: 1, g: 0.28773582, b: 0.28773582, a: 1}

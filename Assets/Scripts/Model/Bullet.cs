@@ -22,7 +22,7 @@ namespace Model
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log("collision");
+            // Debug.Log("collision");
             Border border = other.GetComponent<Border>();
             if (border)
             {

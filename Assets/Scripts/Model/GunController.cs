@@ -16,9 +16,16 @@ namespace Model
         [SerializeField] private Bullet _bullet;
         [SerializeField] private float _speed;
 
+        private Bullet bullet;
+        
         private void Awake()
         {
             _camera = Camera.main;
+        }
+
+        private void Start()
+        {
+            GenNewBullet();
         }
 
         private void OnEnable()
@@ -38,10 +45,17 @@ namespace Model
             {
                 Vector2 vec = (_camera.ScreenToWorldPoint(Input.mousePosition) - _gunPoint.position);
                 vec.Normalize();
-                Bullet bullet = Instantiate(_bullet, _gunPoint.position, Quaternion.identity, _gunPoint);
+                
                 bullet.RigidBody.velocity = vec * _speed;
-                bullet.Color = _dataGame.Colors[Random.Range(0, _dataGame.Colors.Length)];
+                
+                GenNewBullet();
             }
+        }
+
+        private void GenNewBullet()
+        {
+            bullet = Instantiate(_bullet, _gunPoint.position, Quaternion.identity, _gunPoint);
+            bullet.Color = _dataGame.Colors[Random.Range(0, _dataGame.Colors.Length)];
         }
     }
 }

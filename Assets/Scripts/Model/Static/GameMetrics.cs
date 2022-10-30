@@ -10,6 +10,11 @@ namespace Model.Static
 
         public static float KoofHeightY = .8f;
         public static float KoofWeightX = .5f;
+        
+        public enum Nears
+        {
+            W, SW, SE, E, NE, NW
+        }
 
         public static Vector3 GetNearPoint(Vector2 pointBull, Vector2 pointCircle)
         {

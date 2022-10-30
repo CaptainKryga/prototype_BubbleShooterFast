@@ -482,7 +482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381784586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -13.47, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -504,7 +504,7 @@ MonoBehaviour:
   _dataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
   _gunPoint: {fileID: 1949707451}
   _bullet: {fileID: 2533887283811386338, guid: 15a3219260ab5b848b6f08714297ef1b, type: 3}
-  _speed: 5
+  _speed: 10
 --- !u!1 &452276333
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949707450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 5970727292473752537}
   - component: {fileID: 5970727292473752534}
   m_Layer: 0
-  m_Name: Compay
+  m_Name: Company
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

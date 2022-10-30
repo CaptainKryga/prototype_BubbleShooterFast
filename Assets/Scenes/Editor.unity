@@ -2291,7 +2291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cfb4fbba0148f4a8781d93bd3b87bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
+  _dataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
   _customInput: {fileID: 1144758613}
   _generateMap: {fileID: 2097492132}
   _export: 
@@ -3493,7 +3493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9e617eadc599743a25ec46673e4086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
+  _dataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
   _customInput: {fileID: 1144758613}
 --- !u!1 &1348505209
 GameObject:
@@ -6327,7 +6327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f224e1c35e501442b46aa1ea2ebd036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameData: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
+  _dataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
   parent: {fileID: 1956659063}
   prefab: {fileID: 6493898641210031939, guid: a8021610752190749bb069e896ecfb4d, type: 3}
 --- !u!1 &2133632439

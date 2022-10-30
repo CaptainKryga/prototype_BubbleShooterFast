@@ -6,7 +6,7 @@ namespace Model.EditorMap
 {
     public class ExportMap : MonoBehaviour
     {
-        [SerializeField] private GameData _gameData;
+        [SerializeField] private DataGame _dataGame;
         
         [SerializeField] private CustomInput _customInput;
         [SerializeField] private GenerateMap _generateMap;
@@ -35,7 +35,7 @@ namespace Model.EditorMap
             {
                 for (int x = 0; x < map[y].Length; x++)
                 {
-                    _export += _gameData.GetIdColor(map[y][x].color);
+                    _export += _dataGame.GetIdColor(map[y][x].color);
                 }
             }
         }

@@ -7,7 +7,7 @@ namespace Model.EditorMap
 {
     public class UpdateColor : MonoBehaviour
     {
-        [SerializeField] private GameData _gameData;
+        [SerializeField] private DataGame _dataGame;
         [SerializeField] private CustomInput _customInput;
         
         private Camera _camera;
@@ -34,7 +34,7 @@ namespace Model.EditorMap
             if(hit.collider != null)
             {
                 SpriteRenderer sr = hit.collider.GetComponent<SpriteRenderer>();
-                if (sr) sr.color = _gameData.Colors[Random.Range(0, _gameData.Colors.Length - 1)];
+                if (sr) sr.color = _dataGame.Colors[Random.Range(0, _dataGame.Colors.Length - 1)];
             }
         }
     }

@@ -6,7 +6,7 @@ namespace Model.EditorMap
 {
     public class GenerateMap : MonoBehaviour
     {
-        [SerializeField] private GameData _gameData;
+        [SerializeField] private DataGame _dataGame;
         
         //parent and start point
         [SerializeField] private Transform parent;
@@ -28,7 +28,7 @@ namespace Model.EditorMap
                 {
                     _map[y][x] = Instantiate(prefab, new Vector3(startPos.x + x, startPos.y + y), 
                         Quaternion.identity, parent);
-                    _map[y][x].color = _gameData.ColorDisable;
+                    _map[y][x].color = _dataGame.ColorDisable;
                 }
             }
         }

@@ -55,5 +55,79 @@ namespace Model.Static
 
             return 0;
         }
+        
+        public static void SyncNeighbors(int y, int x, Circle[][] map)
+        {
+            map[y][x].Nears = new Circle[6];
+            
+            //West
+            if (x - 1 >= 0)
+            {
+                map[y][x].Nears[0] = map[y][x - 1];
+            }
+            //East
+            if (x + 1 < GameMetrics.SizeMapX)
+            {
+                Debug.Log(map[y][x]);
+                Debug.Log(map[y][x].Nears);
+                Debug.Log(map[y][x].Nears[3]);
+                Debug.Log(map[y][x + 1]);
+                map[y][x].Nears[3] = map[y][x + 1];
+            }
+            //Shift left
+            if (y % 2 == 0)
+            {
+                if (y - 1 >= 0)
+                {
+                    //South-West
+                    map[y][x].Nears[1] = map[y - 1][x];
+
+                    //South-East
+                    if (x - 1 >= 0)
+                    {
+                        map[y][x].Nears[2] = map[y - 1][x - 1];
+                    }
+                }
+
+                if (y + 1 < GameMetrics.SizeMapY)
+                {
+                    //North-West
+                    map[y][x].Nears[4] = map[y + 1][x];
+
+                    //North-East
+                    if (x - 1 >= 0)
+                    {
+                        map[y][x].Nears[5] = map[y + 1][x - 1];
+                    }
+                }
+            }
+            //Don't shift
+            else
+            {
+                if (y - 1 >= 0)
+                {
+                    //South-West
+                    map[y][x].Nears[2] = map[y - 1][x];
+
+                    //South-East
+                    if (x + 1 < GameMetrics.SizeMapX)
+                    {
+                        map[y][x].Nears[1] = map[y - 1][x + 1];
+                    }
+                }
+
+                if (y + 1 < GameMetrics.SizeMapY)
+                {
+                    //North-West
+                    map[y][x].Nears[5] = map[y + 1][x];
+
+                    //North-East
+                    if (x + 1 < GameMetrics.SizeMapX)
+                    {
+                        map[y][x].Nears[4] = map[y + 1][x + 1];
+                    }
+                }
+            }
+        }
     }
 }

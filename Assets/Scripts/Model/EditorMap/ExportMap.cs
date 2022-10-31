@@ -1,4 +1,5 @@
 using Controller;
+using Controller.CustomInput;
 using Scriptables;
 using UnityEngine;
 
@@ -8,22 +9,22 @@ namespace Model.EditorMap
     {
         [SerializeField] private DataGame _dataGame;
         
-        [SerializeField] private CustomInput _customInput;
+        [SerializeField] private CustomInputBase customInputBase;
         [SerializeField] private GenerateMap _generateMap;
 
         [SerializeField] private string _export;
         
         private void OnEnable()
         {
-            _customInput.InputKeyCode_Action += Export;
+            customInputBase.InputKeyboard_Action += Export;
         }
 
         private void OnDisable()
         {
-            _customInput.InputKeyCode_Action -= Export;
+            customInputBase.InputKeyboard_Action -= Export;
         }
 
-        private void Export(KeyCode key, bool flag, Vector3 mousePosition)
+        private void Export(KeyCode key, bool flag)
         {
             if (key != KeyCode.G)
                 return;

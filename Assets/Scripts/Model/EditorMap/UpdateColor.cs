@@ -1,4 +1,5 @@
 using Controller;
+using Controller.CustomInput;
 using Scriptables;
 using TMPro;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace Model.EditorMap
     public class UpdateColor : MonoBehaviour
     {
         [SerializeField] private DataGame _dataGame;
-        [SerializeField] private CustomInput _customInput;
+        [SerializeField] private CustomInputBase customInputBase;
 
         private Color _color;
         private Camera _camera;
@@ -21,17 +22,17 @@ namespace Model.EditorMap
 
         private void OnEnable()
         {
-            _customInput.UpdateMouseRightDownClick_Action += MouseClick;
-            _customInput.InputKeyCode_Action += KeyboardClick;
+            customInputBase.InputMouse_Action += MouseClick;
+            customInputBase.InputKeyboard_Action += KeyboardClick;
         }
 
         private void OnDisable()
         {
-            _customInput.UpdateMouseRightDownClick_Action -= MouseClick;
-            _customInput.InputKeyCode_Action -= KeyboardClick;
+            customInputBase.InputMouse_Action -= MouseClick;
+            customInputBase.InputKeyboard_Action -= KeyboardClick;
         }
 
-        private void MouseClick(Vector2 mousePosition)
+        private void MouseClick(bool flag, Vector2 mousePosition)
         {
             RaycastHit2D hit = Physics2D.Raycast(
                 _camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -42,7 +43,7 @@ namespace Model.EditorMap
             }
         }
         
-        private void KeyboardClick(KeyCode key, bool flag, Vector3 mousePosition)
+        private void KeyboardClick(KeyCode key, bool flag)
         {
             if (key == KeyCode.Alpha1)
                 _color = _dataGame.Colors[0];

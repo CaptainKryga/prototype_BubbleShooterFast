@@ -2292,7 +2292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
-  _customInput: {fileID: 1144758613}
+  customInputBase: {fileID: 1144758613}
   _generateMap: {fileID: 2097492132}
   _export: 
 --- !u!1 &915519057
@@ -3094,7 +3094,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1144758611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34d3cb3c75c6384f99f71016e1ad019, type: 3}
+  m_Script: {fileID: 11500000, guid: 1108a41f8ec512f49bb76f4926cb6f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1189456214
@@ -3494,7 +3494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
-  _customInput: {fileID: 1144758613}
+  customInputBase: {fileID: 1144758613}
 --- !u!1 &1348505209
 GameObject:
   m_ObjectHideFlags: 0

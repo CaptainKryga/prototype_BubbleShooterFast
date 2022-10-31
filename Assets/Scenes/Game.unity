@@ -571,6 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
   _levelControllerBase: {fileID: 5970727292473752534}
+  _customInputBase: {fileID: 8151380778201592716}
   _gunPoint: {fileID: 1949707451}
   _bullet: {fileID: 2533887283811386338, guid: 15a3219260ab5b848b6f08714297ef1b, type: 3}
   _speed: 10
@@ -3447,7 +3448,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8151380778201592718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34d3cb3c75c6384f99f71016e1ad019, type: 3}
+  m_Script: {fileID: 11500000, guid: a81d7f90927c05046820606729ce8f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8151380778201592718

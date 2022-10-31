@@ -1,4 +1,5 @@
 using Controller;
+using Controller.CustomInput;
 using Model.Level;
 using Scriptables;
 using UnityEngine;
@@ -6,10 +7,12 @@ using Random = UnityEngine.Random;
 
 namespace Model
 {
-    public class GunController : MonoBehaviour, ICustomInput
+    public class GunController : MonoBehaviour
     {
         [SerializeField] private DataGame _dataGame;
         [SerializeField] private LevelControllerBase _levelControllerBase;
+
+        [SerializeField] private CustomInputBase _customInputBase;
         
         [SerializeField] private Transform _gunPoint;
         private Camera _camera;
@@ -34,19 +37,20 @@ namespace Model
 
         private void OnEnable()
         {
-            CustomInput.Singleton.InputKeyCode_Action += InputKeyCode;
+            _customInputBase.InputMouse_Action += InputMouse;
         }
 
         private void OnDisable()
         {
-            CustomInput.Singleton.InputKeyCode_Action -= InputKeyCode;
+            _customInputBase.InputMouse_Action -= InputMouse;
         }
 
-        public void InputKeyCode(KeyCode keyCode, bool flag, Vector3 mousePosition)
+        public void InputMouse(bool flag, Vector2 mousePosition)
         {
-            if (keyCode == KeyCode.Mouse0 && flag)
+            Debug.Log("click");
+            if (flag)
             {
-                Vector2 vec = (_camera.ScreenToWorldPoint(Input.mousePosition) - _gunPoint.position);
+                Vector2 vec = (_camera.ScreenToWorldPoint(mousePosition) - _gunPoint.position);
                 vec.Normalize();
                 
                 bullet.RigidBody.velocity = vec * _speed;

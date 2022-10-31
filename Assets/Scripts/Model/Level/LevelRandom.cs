@@ -1,15 +1,15 @@
-﻿namespace Model.Level
+﻿using Model.Static;
+
+namespace Model.Level
 {
     public class LevelRandom : LevelControllerBase
     {
         public override void InitLevel(int levelId)
         {
-            
-        }
-
-        public override void GameOver()
-        {
-            throw new System.NotImplementedException();
+            Stats.IsWin = false;
+            _isPlay = true;
+            GenerateMap.GenerateMapFromRandom(this, DataGame, Parent, Prefab);
+            GunController.Init(null);
         }
     }
 }

@@ -1,42 +1,57 @@
-﻿using UnityEngine;
+﻿using Scriptables;
+using UnityEngine;
 using View.Game;
 
 namespace Model.Level
 {
     public abstract class LevelControllerBase : MonoBehaviour
     {
-        [SerializeField] protected MenuGameBase PanelMenu;
+        [SerializeField] protected MenuGameBase PanelGameOver;
+
+        [SerializeField] protected DataGame DataGame;
+        [SerializeField] protected GunController GunController;
+        [SerializeField] protected Stats Stats;
         
-        private int _score;
-        private bool _isWin;
+        [SerializeField] protected Transform Parent;
+        [SerializeField] protected Circle Prefab;
+        
         [SerializeField] private int _countCircles;
-
-        public int Score
-        {
-            get => _score;
-        }
-
-        public bool IsWin
-        {
-            get => _isWin;
-        }
-
+        [SerializeField] protected bool _isPlay;
+        
         public int CountCircles
         {
             get => _countCircles;
             set
             {
                 _countCircles = value;
-                _score++;
+                Stats.Score++;
                 if (_countCircles <= 0)
                 {
-                    _isWin = true;
+                    Stats.IsWin = true;
                     GameOver();
                 }
             }
         }
 
+        public bool IsPlay
+        {
+            get => _isPlay;
+        }
+        
         public abstract void InitLevel(int levelId);
-        public abstract void GameOver();
+        
+        public void GameOver()
+        {
+            _isPlay = false;
+            PanelGameOver.UsePanel();
+
+            if (!DataGame.GameSettings.IsCompany)
+                PlayerPrefs.SetInt("ScoreRandom", Stats.Score);
+        }
+
+        public void Pause(bool flag)
+        {
+            _isPlay = !flag;
+        }
     }
 }

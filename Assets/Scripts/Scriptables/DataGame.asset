@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DataGame
   m_EditorClassIdentifier: 
   DataCompany: {fileID: 11400000, guid: 2dfc6d65ff5c9f54e9b65785aae69b93, type: 2}
+  GameSettings: {fileID: 11400000, guid: e08a2447bbf64d949b863a55a755dc25, type: 2}
   Colors:
   - {r: 1, g: 0.28773582, b: 0.28773582, a: 1}
   - {r: 1, g: 0.28627455, b: 0.96792895, a: 1}

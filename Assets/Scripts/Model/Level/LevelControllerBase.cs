@@ -37,6 +37,17 @@ namespace Model.Level
         {
             get => _isPlay;
         }
+
+        public void InitController(MenuGameBase panelGameOver, DataGame dataGame, GunController gunController,
+            Stats stats, Transform parent, Circle prefab)
+        {
+            PanelGameOver = panelGameOver;
+            DataGame = dataGame;
+            GunController = gunController;
+            Stats = stats;
+            Parent = parent;
+            Prefab = prefab;
+        }
         
         public abstract void InitLevel(int levelId);
         

@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Model
+namespace Model.Environment
 {
     public class MoveField : MonoBehaviour
     {

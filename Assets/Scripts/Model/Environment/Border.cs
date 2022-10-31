@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Model
+namespace Model.Environment
 {
     public class Border : MonoBehaviour
     {

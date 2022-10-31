@@ -31,6 +31,21 @@ namespace Controller
             
             if (Input.GetKeyDown(KeyCode.G))
                 InputKeyCode_Action?.Invoke(KeyCode.G, true, Input.mousePosition);
+            
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+                InputKeyCode_Action?.Invoke(KeyCode.Alpha1, true, Input.mousePosition);
+            
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+                InputKeyCode_Action?.Invoke(KeyCode.Alpha2, true, Input.mousePosition);
+            
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+                InputKeyCode_Action?.Invoke(KeyCode.Alpha3, true, Input.mousePosition);
+            
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+                InputKeyCode_Action?.Invoke(KeyCode.Alpha4, true, Input.mousePosition);
+            
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+                InputKeyCode_Action?.Invoke(KeyCode.Alpha5, true, Input.mousePosition);
         }
     }
 }

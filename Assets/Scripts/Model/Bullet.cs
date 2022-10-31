@@ -1,3 +1,4 @@
+using Model.Level;
 using Model.Static;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ namespace Model
 {
     public class Bullet : MonoBehaviour
     {
+        [SerializeField] private LevelControllerBase _levelControllerBase;
+        
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private SpriteRenderer sr;
 
@@ -20,6 +23,12 @@ namespace Model
                 sr.color = _color;
             }
         }
+
+        public void Init(LevelControllerBase levelControllerBase)
+        {
+            _levelControllerBase = levelControllerBase;
+        }
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
             // Debug.Log("collision");
@@ -43,6 +52,7 @@ namespace Model
                     rb.velocity = Vector2.zero;
                     transform.SetParent(circle.transform.parent);
                     Circle temp = gameObject.AddComponent<Circle>();
+                    temp.Init(_levelControllerBase);
                     transform.position = GameMetrics.GetNearPoint(transform.position,
                         circle.transform.position);
                     temp.Nears = new Circle[6];

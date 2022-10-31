@@ -1,9 +1,12 @@
+using Model.Level;
 using UnityEngine;
 
 namespace Model
 {
     public class Circle : MonoBehaviour
     {
+        private LevelControllerBase _levelControllerBase;
+        
         private SpriteRenderer _spriteRenderer;
         private Color _color;
 
@@ -25,7 +28,13 @@ namespace Model
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _color = _spriteRenderer.color;
         }
-        
+
+        public void Init(LevelControllerBase levelControllerBase)
+        {
+            _levelControllerBase = levelControllerBase;
+            levelControllerBase.CountCircles++;
+        }
+
         public bool isTest;
         private void Update()
         {
@@ -45,6 +54,8 @@ namespace Model
                 if (near && near.Color == _color)
                     Destroy(near.gameObject);
             }
+
+            _levelControllerBase.CountCircles--;
         }
     }
 }

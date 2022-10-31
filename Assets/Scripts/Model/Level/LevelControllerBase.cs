@@ -9,6 +9,7 @@ namespace Model.Level
         
         private int _score;
         private bool _isWin;
+        [SerializeField] private int _countCircles;
 
         public int Score
         {
@@ -18,6 +19,21 @@ namespace Model.Level
         public bool IsWin
         {
             get => _isWin;
+        }
+
+        public int CountCircles
+        {
+            get => _countCircles;
+            set
+            {
+                _countCircles = value;
+                _score++;
+                if (_countCircles <= 0)
+                {
+                    _isWin = true;
+                    GameOver();
+                }
+            }
         }
 
         public abstract void InitLevel(int levelId);

@@ -1,4 +1,5 @@
 using Controller;
+using Model.Level;
 using Scriptables;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,6 +9,7 @@ namespace Model
     public class GunController : MonoBehaviour, ICustomInput
     {
         [SerializeField] private DataGame _dataGame;
+        [SerializeField] private LevelControllerBase _levelControllerBase;
         
         [SerializeField] private Transform _gunPoint;
         private Camera _camera;
@@ -48,7 +50,7 @@ namespace Model
                 vec.Normalize();
                 
                 bullet.RigidBody.velocity = vec * _speed;
-                
+
                 GenNewBullet();
             }
         }
@@ -56,6 +58,7 @@ namespace Model
         private void GenNewBullet()
         {
             bullet = Instantiate(_bullet, _gunPoint.position, Quaternion.identity, _gunPoint);
+            bullet.Init(_levelControllerBase);
             bullet.Color = _dataGame.Colors[_queue[_colorId++]];
             if (_colorId >= _queue.Length) _colorId = 0;
         }

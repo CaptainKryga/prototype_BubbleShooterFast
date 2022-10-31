@@ -50,6 +50,8 @@ namespace Model.Level
                     _map[y][x].Color = _dataGame.Colors[num];
                     _map[y][x].name = "coord: " + x + " " + y;
                     _map[y][x].IsStatic = true;
+                    
+                    _map[y][x].Init(this);
                 }
             }
             

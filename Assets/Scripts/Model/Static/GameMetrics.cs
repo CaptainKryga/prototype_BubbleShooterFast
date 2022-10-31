@@ -19,10 +19,10 @@ namespace Model.Static
 
         public static Vector2[] Neighbors =
         {
-            new Vector2(-KoofWeightX,0),
+            new Vector2(-1,0),
             new Vector2(-.5f, -KoofHeightY),
             new Vector2(.5f, -KoofHeightY),
-            new Vector2(KoofWeightX,0),
+            new Vector2(1,0),
             new Vector2(.5f, KoofHeightY),
             new Vector2(-.5f, KoofHeightY)
         };

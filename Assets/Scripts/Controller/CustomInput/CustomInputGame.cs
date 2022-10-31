@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Controller.CustomInput
 {
@@ -7,7 +8,7 @@ namespace Controller.CustomInput
         protected override void SetupKeyboard()
         {
             //gun
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !EventSystem.current.currentSelectedGameObject)
                 InputMouse_Action?.Invoke(true, Input.mousePosition);
             
             //mobile?

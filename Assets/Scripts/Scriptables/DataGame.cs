@@ -5,6 +5,9 @@ namespace Scriptables
     [CreateAssetMenu(fileName = "GameData", menuName = "ScriptableObjects/GameData", order = 1)]
     public class DataGame : ScriptableObject
     {
+        public DataCompany DataCompany;
+        public GameSettings GameSettings;
+        
         public Color[] Colors;
         public Color ColorDisable;
 

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52cb9cdaf1042fe43a0588bf51848573, type: 3}
   m_Name: DataGame
   m_EditorClassIdentifier: 
+  DataCompany: {fileID: 11400000, guid: 2dfc6d65ff5c9f54e9b65785aae69b93, type: 2}
   Colors:
   - {r: 1, g: 0.28773582, b: 0.28773582, a: 1}
   - {r: 1, g: 0.28627455, b: 0.96792895, a: 1}

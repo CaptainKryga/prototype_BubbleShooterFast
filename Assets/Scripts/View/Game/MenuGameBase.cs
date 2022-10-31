@@ -1,5 +1,4 @@
-﻿using Model.Level;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
 
 namespace View.Game
 {

@@ -6,8 +6,8 @@ namespace Utils
     {
         void Awake()
         {
-            QualitySettings.maxQueuedFrames = 60;
             QualitySettings.vSyncCount = 1;
+            Application.targetFrameRate = 60;
         }
     }
 }

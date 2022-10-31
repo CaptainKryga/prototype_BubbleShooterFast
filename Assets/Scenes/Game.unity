@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 158752509}
   - component: {fileID: 158752510}
-  - component: {fileID: 158752511}
   m_Layer: 0
   m_Name: Parent
   m_TagString: Untagged
@@ -149,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158752508}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: -8.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -208,18 +207,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &158752511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158752508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5adac13b5da542a41acdbb9fac17a6dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &307299500
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
+  _levelControllerBase: {fileID: 5970727292473752534}
   _gunPoint: {fileID: 1949707451}
   _bullet: {fileID: 2533887283811386338, guid: 15a3219260ab5b848b6f08714297ef1b, type: 3}
   _speed: 10
@@ -959,6 +947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PanelMenu: {fileID: 7335430979541768943}
+  _countCircles: 0
   _dataCompany: {fileID: 11400000, guid: 2dfc6d65ff5c9f54e9b65785aae69b93, type: 2}
   _dataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
   _gunController: {fileID: 381784588}
@@ -1044,6 +1033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PanelMenu: {fileID: 7335430979541768943}
+  _countCircles: 0
 --- !u!1 &5970727294171989954
 GameObject:
   m_ObjectHideFlags: 0

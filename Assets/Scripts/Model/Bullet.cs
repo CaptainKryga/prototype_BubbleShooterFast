@@ -41,6 +41,7 @@ namespace Model
                 else
                 {
                     rb.velocity = Vector2.zero;
+                    transform.SetParent(circle.transform.parent);
                     Circle temp = gameObject.AddComponent<Circle>();
                     transform.position = GameMetrics.GetNearPoint(transform.position,
                         circle.transform.position);

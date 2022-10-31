@@ -16,14 +16,17 @@ namespace Model
         [SerializeField] private float _speed;
 
         private Bullet bullet;
+        private int[] _queue;
+        private int _colorId;
         
         private void Awake()
         {
             _camera = Camera.main;
         }
 
-        private void Start()
+        public void Init(int[] queue)
         {
+            _queue = queue;
             GenNewBullet();
         }
 
@@ -53,7 +56,8 @@ namespace Model
         private void GenNewBullet()
         {
             bullet = Instantiate(_bullet, _gunPoint.position, Quaternion.identity, _gunPoint);
-            bullet.Color = _dataGame.Colors[Random.Range(0, _dataGame.Colors.Length)];
+            bullet.Color = _dataGame.Colors[_queue[_colorId++]];
+            if (_colorId >= _queue.Length) _colorId = 0;
         }
     }
 }

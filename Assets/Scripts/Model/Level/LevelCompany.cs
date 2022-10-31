@@ -1,6 +1,7 @@
 ﻿using Model.Static;
 using Scriptables;
 using UnityEngine;
+using View.Game;
 
 namespace Model.Level
 {
@@ -9,13 +10,22 @@ namespace Model.Level
         [SerializeField] private DataCompany _dataCompany;
         [SerializeField] private DataGame _dataGame;
 
+        [SerializeField] private GunController _gunController;
+        [SerializeField] private MenuGameBase _menuGameOver;
+        
         [SerializeField] private Transform startInstance;
         [SerializeField] private Circle prefab;
 
         private Circle[][] _map;
         public override void InitLevel(int levelId)
         {
-            GenerateMapFromString(_dataCompany.Levels[levelId]);
+            GenerateMapFromString(_dataCompany.Levels[levelId].Level);
+            _gunController.Init(_dataCompany.Levels[levelId].Queue);
+        }
+
+        public override void GameOver()
+        {
+            _menuGameOver.UsePanel();
         }
 
         private void GenerateMapFromString(string map)

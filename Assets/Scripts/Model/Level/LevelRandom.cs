@@ -6,5 +6,10 @@
         {
             
         }
+
+        public override void GameOver()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

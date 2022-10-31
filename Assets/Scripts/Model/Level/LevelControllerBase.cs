@@ -21,5 +21,6 @@ namespace Model.Level
         }
 
         public abstract void InitLevel(int levelId);
+        public abstract void GameOver();
     }
 }

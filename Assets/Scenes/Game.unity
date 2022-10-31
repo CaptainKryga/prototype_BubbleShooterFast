@@ -294,7 +294,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -419,7 +419,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -662,7 +662,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -768,7 +768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efcfb5b295e95024dbd2f0f589742dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelControllerBase: {fileID: 0}
 --- !u!61 &559415595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -835,7 +834,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -244
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -932,6 +931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8efd33ff37c89344832ffae09ef5ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _score: 0
 --- !u!4 &907860352
 Transform:
   m_ObjectHideFlags: 0
@@ -984,7 +984,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -100, y: -100}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1505980783
 MonoBehaviour:
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b2c660a9e96fa5745bdc0277866a7bdd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1157,7 +1157,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelGameOver: {fileID: 7335430978034629272}
   DataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
-  gunCompany: {fileID: 0}
   Stats: {fileID: 907860351}
   Parent: {fileID: 158752509}
   Prefab: {fileID: 3966261872442790897, guid: a8021610752190749bb069e896ecfb4d, type: 3}
@@ -1513,7 +1512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.6367924, g: 0.7479732, b: 1, a: 0.972549}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2044,7 +2043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.63529414, g: 0.7490196, b: 1, a: 0.972549}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3503,6 +3502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _starterLevelController: {fileID: 5970727292473752538}
   _starterGunBase: {fileID: 381784588}
+  _gameOverPoint: {fileID: 559415594}
 --- !u!1 &8151380777470090418
 GameObject:
   m_ObjectHideFlags: 0

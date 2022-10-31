@@ -1,4 +1,5 @@
-﻿using Model.Gun;
+﻿using Model.Environment;
+using Model.Gun;
 using Model.Level;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Controller
     {
         [SerializeField] private StarterLevelController _starterLevelController;
         [SerializeField] private StarterGunBase _starterGunBase;
+        [SerializeField] private GameOverPoint _gameOverPoint;
 
         private LevelControllerBase _levelController;
 
@@ -15,6 +17,7 @@ namespace Controller
         {
             _levelController = _starterLevelController.GetLevelController();
             _levelController.SyncGunBase(_starterGunBase.GetGunBase(_levelController));
+            _gameOverPoint.InitGameOverPoint(_levelController);
         }
 
         public void Pause(bool flag)

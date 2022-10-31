@@ -1,61 +1,29 @@
 using Model.Level;
-using UnityEngine;
 
 namespace Model
 {
-    public class Circle : MonoBehaviour
+    public class Circle : Entity
     {
-        private LevelControllerBase _levelControllerBase;
-        
-        private SpriteRenderer _spriteRenderer;
-        private Color _color;
-
-        public Circle[] Nears;
+        public Circle[] Neighbors;
         public bool IsStatic;
         
-        public Color Color
+        public override void Init(LevelBase levelBase)
         {
-            get => _color;
-            set
+            LevelBase = levelBase;
+            levelBase.CountCircles++;
+
+            Neighbors = new Circle[6];
+        }
+
+        protected override void OnDestroy()
+        {
+            foreach (var near in Neighbors)
             {
-                _color = value;
-                _spriteRenderer.color = _color;
-            }
-        }
-
-        private void Awake()
-        {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-            _color = _spriteRenderer.color;
-        }
-
-        public void Init(LevelControllerBase levelControllerBase)
-        {
-            _levelControllerBase = levelControllerBase;
-            levelControllerBase.CountCircles++;
-        }
-
-        public bool isTest;
-        private void Update()
-        {
-            if (isTest)
-            {
-                isTest = false;
-                for (int x = 0; x < Nears.Length; x++)
-                    if (Nears[x])
-                        Nears[x].Color = Color.white;
-            }
-        }
-
-        private void OnDestroy()
-        {
-            foreach (var near in Nears)
-            {
-                if (near && near.Color == _color)
+                if (near && near.Color == base.Color)
                     Destroy(near.gameObject);
             }
 
-            _levelControllerBase.CountCircles--;
+            LevelBase.CountCircles--;
         }
     }
 }

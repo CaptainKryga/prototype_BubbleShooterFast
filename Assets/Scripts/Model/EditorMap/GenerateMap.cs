@@ -9,8 +9,8 @@ namespace Model.EditorMap
         [SerializeField] private DataGame _dataGame;
         
         //parent and start point
-        [SerializeField] private Transform parent;
-        [SerializeField] private Circle prefab;
+        [SerializeField] private Transform _parent;
+        [SerializeField] private Circle _prefab;
 
         private Circle[][] _map;
 
@@ -20,7 +20,7 @@ namespace Model.EditorMap
         {
             _map = new Circle[GameMetrics.SizeMapY][];
             
-            Vector3 startPos = parent.transform.position;
+            Vector3 startPos = _parent.transform.position;
             for (int y = 0; y < GameMetrics.SizeMapY; y++)
             {
                 _map[y] = new Circle[GameMetrics.SizeMapX];
@@ -33,7 +33,7 @@ namespace Model.EditorMap
                         y % 2 != 0 ? x + GameMetrics.KoofWeightX : x,
                         y * GameMetrics.KoofHeightY);
                     
-                    _map[y][x] = Instantiate(prefab, sp, Quaternion.identity, parent);
+                    _map[y][x] = Instantiate(_prefab, sp, Quaternion.identity, _parent);
                     _map[y][x].Color = _dataGame.ColorDisable;
                 }
             }

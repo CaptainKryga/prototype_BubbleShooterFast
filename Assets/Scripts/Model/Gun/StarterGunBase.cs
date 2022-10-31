@@ -14,13 +14,12 @@ namespace Model.Gun
         [SerializeField] protected Bullet Prefab;
         [SerializeField] protected float Speed;
 
-        public GunBase GetGunBase(LevelControllerBase levelBase)
+        public GunBase GetGunBase(LevelBase levelBase)
         {
             GunBase gunController = DataGame.GameSettings.IsCompany ? 
                 gameObject.AddComponent<GunCompany>() :
                 gameObject.AddComponent<GunRandom>();
             gunController.InitGunBase(levelBase, DataGame, CustomInputBase, Parent, Prefab, Speed);
-            gunController.Init(DataGame.DataCompany.Levels[DataGame.GameSettings.LevelId].Queue);
             return gunController;
         }
     }

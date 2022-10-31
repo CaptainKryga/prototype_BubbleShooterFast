@@ -9,19 +9,19 @@ namespace Model.EditorMap
     {
         [SerializeField] private DataGame _dataGame;
         
-        [SerializeField] private CustomInputBase customInputBase;
+        [SerializeField] private CustomInputBase _customInputBase;
         [SerializeField] private GenerateMap _generateMap;
 
         [SerializeField] private string _export;
         
         private void OnEnable()
         {
-            customInputBase.InputKeyboard_Action += Export;
+            _customInputBase.InputKeyboard_Action += Export;
         }
 
         private void OnDisable()
         {
-            customInputBase.InputKeyboard_Action -= Export;
+            _customInputBase.InputKeyboard_Action -= Export;
         }
 
         private void Export(KeyCode key, bool flag)

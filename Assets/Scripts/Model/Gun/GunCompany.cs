@@ -16,7 +16,7 @@ namespace Model.Gun
         protected override void GenNewBullet()
         {
             Bullet = Instantiate(Prefab, Parent.position, Quaternion.identity, Parent);
-            Bullet.Init(LevelController);
+            Bullet.Init(Level);
             Bullet.Color = DataGame.Colors[_queue[_colorId++]];
             if (_colorId >= _queue.Length) _colorId = 0;
         }

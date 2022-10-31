@@ -2,7 +2,7 @@
 
 namespace Model.Level
 {
-    public class LevelCompany : LevelControllerBase
+    public class LevelCompany : LevelBase
     {
         protected override void InitLevel(int levelId)
         {

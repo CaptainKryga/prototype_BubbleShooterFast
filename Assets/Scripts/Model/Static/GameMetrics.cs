@@ -10,7 +10,7 @@ namespace Model.Static
         public static float KoofHeightY = .8f;
         public static float KoofWeightX = .5f;
 
-        public static Vector2[] Neighbors =
+        private static readonly Vector2[] Neighbors =
         {
             new Vector2(-1,0),
             new Vector2(-.5f, -KoofHeightY),
@@ -20,7 +20,7 @@ namespace Model.Static
             new Vector2(-.5f, KoofHeightY)
         };
 
-        public static Vector3 GetNearPoint(Vector2 pointBull, Vector2 pointCircle)
+        public static Vector3 GetNeighborPoint(Vector2 pointBull, Vector2 pointCircle)
         {
             Vector2 save = Vector2.zero;
             float dist = Vector3.Distance(pointBull, pointCircle);
@@ -51,17 +51,17 @@ namespace Model.Static
         
         public static void SyncNeighbors(int y, int x, Circle[][] map)
         {
-            map[y][x].Nears = new Circle[6];
+            map[y][x].Neighbors = new Circle[6];
             
             //West
             if (x - 1 >= 0)
             {
-                map[y][x].Nears[0] = map[y][x - 1];
+                map[y][x].Neighbors[0] = map[y][x - 1];
             }
             //East
             if (x + 1 < SizeMapX)
             {
-                map[y][x].Nears[3] = map[y][x + 1];
+                map[y][x].Neighbors[3] = map[y][x + 1];
             }
             //Shift left
             if (y % 2 == 0)
@@ -69,24 +69,24 @@ namespace Model.Static
                 if (y - 1 >= 0)
                 {
                     //South-West
-                    map[y][x].Nears[1] = map[y - 1][x];
+                    map[y][x].Neighbors[1] = map[y - 1][x];
 
                     //South-East
                     if (x - 1 >= 0)
                     {
-                        map[y][x].Nears[2] = map[y - 1][x - 1];
+                        map[y][x].Neighbors[2] = map[y - 1][x - 1];
                     }
                 }
 
                 if (y + 1 < SizeMapY)
                 {
                     //North-West
-                    map[y][x].Nears[4] = map[y + 1][x];
+                    map[y][x].Neighbors[4] = map[y + 1][x];
 
                     //North-East
                     if (x - 1 >= 0)
                     {
-                        map[y][x].Nears[5] = map[y + 1][x - 1];
+                        map[y][x].Neighbors[5] = map[y + 1][x - 1];
                     }
                 }
             }
@@ -96,24 +96,24 @@ namespace Model.Static
                 if (y - 1 >= 0)
                 {
                     //South-West
-                    map[y][x].Nears[2] = map[y - 1][x];
+                    map[y][x].Neighbors[2] = map[y - 1][x];
 
                     //South-East
                     if (x + 1 < SizeMapX)
                     {
-                        map[y][x].Nears[1] = map[y - 1][x + 1];
+                        map[y][x].Neighbors[1] = map[y - 1][x + 1];
                     }
                 }
 
                 if (y + 1 < SizeMapY)
                 {
                     //North-West
-                    map[y][x].Nears[5] = map[y + 1][x];
+                    map[y][x].Neighbors[5] = map[y + 1][x];
 
                     //North-East
                     if (x + 1 < SizeMapX)
                     {
-                        map[y][x].Nears[4] = map[y + 1][x + 1];
+                        map[y][x].Neighbors[4] = map[y + 1][x + 1];
                     }
                 }
             }

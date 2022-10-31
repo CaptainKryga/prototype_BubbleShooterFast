@@ -5,18 +5,18 @@ namespace Model.Environment
 {
     public class GameOverPoint : MonoBehaviour
     {
-        private LevelControllerBase _levelController;
+        private LevelBase _level;
 
-        public void InitGameOverPoint(LevelControllerBase levelController)
+        public void InitGameOverPoint(LevelBase level)
         {
-            _levelController = levelController;
+            _level = level;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.GetComponent<Circle>())
             {
-                _levelController.GameOver();
+                _level.GameOver();
             }
         }
     }

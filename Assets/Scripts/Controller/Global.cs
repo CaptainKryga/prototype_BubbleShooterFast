@@ -7,22 +7,22 @@ namespace Controller
 {
     public class Global : MonoBehaviour
     {
-        [SerializeField] private StarterLevelController _starterLevelController;
+        [SerializeField] private StarterLevelBase starterLevelBase;
         [SerializeField] private StarterGunBase _starterGunBase;
         [SerializeField] private GameOverPoint _gameOverPoint;
 
-        private LevelControllerBase _levelController;
+        private LevelBase _level;
 
         private void Awake()
         {
-            _levelController = _starterLevelController.GetLevelController();
-            _levelController.SyncGunBase(_starterGunBase.GetGunBase(_levelController));
-            _gameOverPoint.InitGameOverPoint(_levelController);
+            _level = starterLevelBase.GetLevelController();
+            _level.SyncGunBase(_starterGunBase.GetGunBase(_level));
+            _gameOverPoint.InitGameOverPoint(_level);
         }
 
         public void Pause(bool flag)
         {
-            _levelController.Pause(flag);
+            _level.Pause(flag);
         }
     }
 }

@@ -8,11 +8,6 @@ namespace Model.Gun
 {
     public abstract class GunBase : MonoBehaviour
     {
-        private Camera _camera;
-
-        protected LevelControllerBase LevelController;
-        protected Bullet Bullet;
-
         [SerializeField] protected DataGame DataGame;
         [SerializeField] protected CustomInputBase CustomInputBase;
         [SerializeField] protected Transform Parent;
@@ -20,15 +15,20 @@ namespace Model.Gun
         [SerializeField] protected Bullet Prefab;
         [SerializeField] protected float Speed;
         
+        protected LevelBase Level;
+        protected Bullet Bullet;
+        
+        private Camera _camera;
+
         private void Awake()
         {
             _camera = Camera.main;
         }
         
-        public void InitGunBase(LevelControllerBase levelController, DataGame dataGame,
+        public void InitGunBase(LevelBase level, DataGame dataGame,
             CustomInputBase customInputBase, Transform parent, Bullet prefab, float speed)
         {
-            LevelController = levelController;
+            Level = level;
             DataGame = dataGame;
             CustomInputBase = customInputBase;
             Parent = parent;
@@ -40,7 +40,7 @@ namespace Model.Gun
         
         private void InputMouse(bool flag, Vector2 mousePosition)
         {
-            if (!LevelController.IsPlay)
+            if (!Level.IsPlay)
                 return;
             
             if (flag)

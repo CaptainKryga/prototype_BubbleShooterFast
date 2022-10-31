@@ -10,7 +10,7 @@ namespace Model.EditorMap
     public class UpdateColor : MonoBehaviour
     {
         [SerializeField] private DataGame _dataGame;
-        [SerializeField] private CustomInputBase customInputBase;
+        [SerializeField] private CustomInputBase _customInputBase;
 
         private Color _color;
         private Camera _camera;
@@ -22,14 +22,14 @@ namespace Model.EditorMap
 
         private void OnEnable()
         {
-            customInputBase.InputMouse_Action += MouseClick;
-            customInputBase.InputKeyboard_Action += KeyboardClick;
+            _customInputBase.InputMouse_Action += MouseClick;
+            _customInputBase.InputKeyboard_Action += KeyboardClick;
         }
 
         private void OnDisable()
         {
-            customInputBase.InputMouse_Action -= MouseClick;
-            customInputBase.InputKeyboard_Action -= KeyboardClick;
+            _customInputBase.InputMouse_Action -= MouseClick;
+            _customInputBase.InputKeyboard_Action -= KeyboardClick;
         }
 
         private void MouseClick(bool flag, Vector2 mousePosition)

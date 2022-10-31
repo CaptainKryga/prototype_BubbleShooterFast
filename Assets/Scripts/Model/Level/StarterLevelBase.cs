@@ -5,7 +5,7 @@ using View.Game;
 
 namespace Model.Level
 {
-    public class StarterLevelController : MonoBehaviour
+    public class StarterLevelBase : MonoBehaviour
     {
         [SerializeField] protected MenuGameBase PanelGameOver;
 
@@ -15,9 +15,9 @@ namespace Model.Level
         [SerializeField] protected Transform Parent;
         [SerializeField] protected Circle Prefab;
 
-        public LevelControllerBase GetLevelController()
+        public LevelBase GetLevelController()
         {
-            LevelControllerBase lc = DataGame.GameSettings.IsCompany ? 
+            LevelBase lc = DataGame.GameSettings.IsCompany ? 
                 gameObject.AddComponent<LevelCompany>() :
                 gameObject.AddComponent<LevelRandom>();
             lc.InitController(PanelGameOver, DataGame, Stats, Parent, Prefab);

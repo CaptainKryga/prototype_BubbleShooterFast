@@ -6,7 +6,7 @@ namespace Model.Static
 {
     public static class GenerateMap
     {
-        public static void GenerateMapFromString(LevelControllerBase levelController, DataGame dataGame, 
+        public static void GenerateMapFromString(LevelBase level, DataGame dataGame, 
             Transform startInstance, Circle prefab, string import)
         {
             Circle[][] map = new Circle[GameMetrics.SizeMapY][];
@@ -30,14 +30,14 @@ namespace Model.Static
                     map[y][x].name = "circle[" + x + "][" + y + "]";
                     map[y][x].IsStatic = true;
                     
-                    map[y][x].Init(levelController);
+                    map[y][x].Init(level);
                 }
             }
             
             SyncNeighbors(map);
         }
 
-        public static void GenerateMapFromRandom(LevelControllerBase levelController, DataGame dataGame, 
+        public static void GenerateMapFromRandom(LevelBase level, DataGame dataGame, 
             Transform startInstance, Circle prefab)
         {
             Circle[][] map = new Circle[GameMetrics.SizeMapY][];
@@ -59,7 +59,7 @@ namespace Model.Static
                     map[y][x].name = "circle[" + x + "][" + y + "]";
                     map[y][x].IsStatic = true;
                     
-                    map[y][x].Init(levelController);
+                    map[y][x].Init(level);
                 }
             }
 

@@ -5,34 +5,18 @@ using UnityEngine;
 
 namespace Model
 {
-    public class Bullet : MonoBehaviour
+    public class Bullet : Entity
     {
-        [SerializeField] private LevelControllerBase _levelControllerBase;
-        
         [SerializeField] private Rigidbody2D rb;
-        [SerializeField] private SpriteRenderer sr;
-
         public Rigidbody2D RigidBody { get => rb; }
-        private Color _color;
         
-        public Color Color
+        public override void Init(LevelBase levelBase)
         {
-            get => _color;
-            set
-            {
-                _color = value;
-                sr.color = _color;
-            }
-        }
-
-        public void Init(LevelControllerBase levelControllerBase)
-        {
-            _levelControllerBase = levelControllerBase;
+            LevelBase = levelBase;
         }
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            // Debug.Log("collision");
             Border border = other.GetComponent<Border>();
             if (border)
             {
@@ -40,55 +24,55 @@ namespace Model
                 rb.velocity = new Vector2(border.IsX ? vel.x * -1 : vel.x, !border.IsX ? vel.y * -1 : vel.y);
                 return;
             }
-            Circle circle = other.GetComponent<Circle>();
-            if (circle)
+            
+            Entity entity = other.GetComponent<Entity>();
+            if (entity && (entity as Circle) != null)
             {
-                if (circle.Color == sr.color)
-                {
-                    Destroy(circle.gameObject);
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    rb.velocity = Vector2.zero;
-                    transform.SetParent(circle.transform.parent);
-                    Circle temp = gameObject.AddComponent<Circle>();
-                    temp.Init(_levelControllerBase);
-                    transform.position = GameMetrics.GetNearPoint(transform.position,
-                        circle.transform.position);
-                    temp.Nears = new Circle[6];
-                    SetupNeighbors(temp);
-                    temp.IsStatic = true;
+                //change parent from move field(DLC)
+                transform.SetParent(entity.transform.parent);
+                //set position
+                transform.position = GameMetrics.GetNeighborPoint(transform.position,
+                    entity.transform.position);
                     
-                    Destroy(rb);
-                    Destroy(this);
-                }
+                //setup circle
+                Circle circle = gameObject.AddComponent<Circle>();
+                circle.Init(LevelBase);
+                SetupNeighbors(circle);
+                circle.IsStatic = true;
+
+                //remove physics and bullet status
+                Destroy(rb);
+                Destroy(this);
             }
         }
 
         private void SetupNeighbors(Circle circle)
         {
             //sphere raycast
-            Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, 1f);
-            Debug.Log(enemies.Length);
-            foreach (var en in enemies)
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1f);
+            foreach (var coll in colliders)
             {
-                Circle temp = en.GetComponent<Circle>();
+                Circle temp = coll.GetComponent<Circle>();
                 if (temp && temp.IsStatic)
                 {
+                    //sync link's
                     int index = GameMetrics.GetNeighborIndex(temp, circle);
-                    temp.Nears[index] = circle;
+                    temp.Neighbors[index] = circle;
                     index = GameMetrics.GetNeighborIndex(circle, temp);
-                    circle.Nears[index] = temp;
+                    circle.Neighbors[index] = temp;
 
-                    if (temp.Color == _color)
+                    if (temp.Color == Color)
                     {
                         Destroy(circle.gameObject);
                         Destroy(gameObject);
                     }
                 }
-                Debug.Log(en.name);
             }
+        }
+        
+        protected override void OnDestroy()
+        {
+            
         }
     }
 }

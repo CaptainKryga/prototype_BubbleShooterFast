@@ -5,7 +5,7 @@ using View.Game;
 
 namespace Model.Level
 {
-    public abstract class LevelControllerBase : MonoBehaviour
+    public abstract class LevelBase : MonoBehaviour
     {
         [SerializeField] protected MenuGameBase PanelGameOver;
 

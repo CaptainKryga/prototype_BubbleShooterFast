@@ -17,7 +17,7 @@ namespace View.Main
         public void OnClick_Start()
         {
             _settings.IsCompany = false;
-            _settings.LevelId = Random.Range(0, 100);
+            // _settings.LevelId = Random.Range(0, 100);
             SceneManager.LoadScene(1);
         }
     }

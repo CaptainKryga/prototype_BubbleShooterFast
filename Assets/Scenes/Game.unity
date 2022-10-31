@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 381784587}
   - component: {fileID: 381784588}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: GunController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,14 +566,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 381784586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12234598af6183649a121badee101c35, type: 3}
+  m_Script: {fileID: 11500000, guid: a71a62808d5b4eccb0788379ff6c494f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
-  _customInputBase: {fileID: 8151380778201592716}
-  _gunPoint: {fileID: 1949707451}
-  _bullet: {fileID: 2533887283811386338, guid: 15a3219260ab5b848b6f08714297ef1b, type: 3}
-  _speed: 10
+  DataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
+  CustomInputBase: {fileID: 8151380778201592716}
+  Parent: {fileID: 1949707451}
+  Prefab: {fileID: 2533887283811386338, guid: 15a3219260ab5b848b6f08714297ef1b, type: 3}
+  Speed: 10
 --- !u!1 &452276333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelGameOver: {fileID: 7335430978034629272}
   DataGame: {fileID: 11400000, guid: 47c459337a209b14e868a582c1fc3b67, type: 2}
-  GunController: {fileID: 381784588}
+  gunCompany: {fileID: 0}
   Stats: {fileID: 907860351}
   Parent: {fileID: 158752509}
   Prefab: {fileID: 3966261872442790897, guid: a8021610752190749bb069e896ecfb4d, type: 3}
@@ -3501,7 +3501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e005b6c145c84719be89f519aab9116b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starterLevelController: {fileID: 5970727292473752538}
+  _starterLevelController: {fileID: 5970727292473752538}
+  _starterGunBase: {fileID: 381784588}
 --- !u!1 &8151380777470090418
 GameObject:
   m_ObjectHideFlags: 0

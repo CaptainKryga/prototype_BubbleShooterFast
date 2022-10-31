@@ -10,14 +10,14 @@ namespace Model.Level
         [SerializeField] protected MenuGameBase PanelGameOver;
 
         [SerializeField] protected DataGame DataGame;
-        [SerializeField] protected GunController GunController;
+        [SerializeField] protected GunBase GunBase;
         [SerializeField] protected Stats Stats;
         
         [SerializeField] protected Transform Parent;
         [SerializeField] protected Circle Prefab;
         
-        [SerializeField] private int _countCircles;
-        [SerializeField] protected bool _isPlay;
+        private int _countCircles;
+        private bool _isPlay;
         
         public int CountCircles
         {
@@ -37,28 +37,33 @@ namespace Model.Level
         public bool IsPlay
         {
             get => _isPlay;
+            set => _isPlay = value;
         }
 
-        public void InitController(MenuGameBase panelGameOver, DataGame dataGame, GunController gunController,
-            Stats stats, Transform parent, Circle prefab)
+        public void InitController(MenuGameBase panelGameOver, DataGame dataGame, Stats stats, 
+            Transform parent, Circle prefab)
         {
             PanelGameOver = panelGameOver;
-            DataGame = dataGame;
-            GunController = gunController;
+            DataGame = dataGame; 
             Stats = stats;
             Parent = parent;
             Prefab = prefab;
         }
+
+        public void SyncGunBase(GunBase gunBase)
+        {
+            GunBase = gunBase;
+            InitLevel(DataGame.GameSettings.LevelId);
+        }
         
-        public abstract void InitLevel(int levelId);
+        protected abstract void InitLevel(int levelId);
         
         public void GameOver()
         {
             _isPlay = false;
             PanelGameOver.UsePanel();
 
-            if (!DataGame.GameSettings.IsCompany)
-                PlayerPrefs.SetInt("ScoreRandom", Stats.Score);
+            Stats.GameOver(DataGame.GameSettings.IsCompany);
         }
 
         public void Pause(bool flag)

@@ -1,19 +1,20 @@
-﻿using Model;
+﻿using Model.Gun;
 using Model.Level;
-using Scriptables;
 using UnityEngine;
 
 namespace Controller
 {
     public class Global : MonoBehaviour
     {
-        [SerializeField] private StarterLevelController starterLevelController;
+        [SerializeField] private StarterLevelController _starterLevelController;
+        [SerializeField] private StarterGunBase _starterGunBase;
 
         private LevelControllerBase _levelController;
 
-        private void Start()
+        private void Awake()
         {
-            _levelController = starterLevelController.GetLevelController();
+            _levelController = _starterLevelController.GetLevelController();
+            _levelController.SyncGunBase(_starterGunBase.GetGunBase(_levelController));
         }
 
         public void Pause(bool flag)

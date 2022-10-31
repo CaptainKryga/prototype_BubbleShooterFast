@@ -4,12 +4,12 @@ namespace Model.Level
 {
     public class LevelRandom : LevelControllerBase
     {
-        public override void InitLevel(int levelId)
+        protected override void InitLevel(int levelId)
         {
             Stats.IsWin = false;
-            _isPlay = true;
+            IsPlay = true;
             GenerateMap.GenerateMapFromRandom(this, DataGame, Parent, Prefab);
-            GunController.Init(null);
+            GunBase.Init(null);
         }
     }
 }

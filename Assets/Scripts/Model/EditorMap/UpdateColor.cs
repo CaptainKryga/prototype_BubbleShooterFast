@@ -1,5 +1,6 @@
 using Controller;
 using Controller.CustomInput;
+using Model.Components;
 using Scriptables;
 using TMPro;
 using UnityEngine;

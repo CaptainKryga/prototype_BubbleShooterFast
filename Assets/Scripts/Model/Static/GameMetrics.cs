@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Model.Components;
+using UnityEngine;
 
 namespace Model.Static
 {

@@ -1,6 +1,6 @@
 using Model.Level;
 
-namespace Model
+namespace Model.Components
 {
     public class Circle : Entity
     {

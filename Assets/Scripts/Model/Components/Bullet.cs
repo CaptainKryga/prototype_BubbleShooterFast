@@ -3,7 +3,7 @@ using Model.Level;
 using Model.Static;
 using UnityEngine;
 
-namespace Model
+namespace Model.Components
 {
     public class Bullet : Entity
     {

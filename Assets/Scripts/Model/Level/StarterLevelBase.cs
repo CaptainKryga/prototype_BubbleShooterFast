@@ -1,4 +1,5 @@
-﻿using Model.Gun;
+﻿using Model.Components;
+using Model.Gun;
 using Scriptables;
 using UnityEngine;
 using View.Game;

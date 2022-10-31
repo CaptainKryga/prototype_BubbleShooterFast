@@ -1,7 +1,7 @@
 ﻿using Model.Level;
 using UnityEngine;
 
-namespace Model
+namespace Model.Components
 {
     public abstract class Entity : MonoBehaviour
     {

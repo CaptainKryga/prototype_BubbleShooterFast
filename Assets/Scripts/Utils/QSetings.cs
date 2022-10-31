@@ -4,7 +4,7 @@ namespace Utils
 {
     public class QSetings : MonoBehaviour
     {
-        void Start()
+        void Awake()
         {
             QualitySettings.maxQueuedFrames = 60;
             QualitySettings.vSyncCount = 1;

@@ -24,8 +24,10 @@ namespace Model.Level
             get => _countCircles;
             set
             {
+                if (_countCircles > value)
+                    Stats.Score += _countCircles - value;
+                
                 _countCircles = value;
-                Stats.Score++;
                 if (_countCircles <= 0)
                 {
                     Stats.IsWin = true;

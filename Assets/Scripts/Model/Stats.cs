@@ -5,7 +5,7 @@ namespace Model
     public class Stats : MonoBehaviour
     {
         private bool _isWin;
-        private int _score;
+        [SerializeField] private int _score;
 
         public bool IsWin
         {
@@ -16,7 +16,7 @@ namespace Model
         public int Score
         {
             get => _score;
-            set => _score += value;
+            set => _score = value;
         }
 
         public void GameOver(bool isCompany)

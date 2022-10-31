@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8ac44fa0d443359d5ea3a5a592c228, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  IsCompany: 1
-  LevelId: 1
+  IsCompany: 0
+  LevelId: 0

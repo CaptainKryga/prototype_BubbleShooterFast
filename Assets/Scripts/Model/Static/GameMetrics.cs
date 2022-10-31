@@ -1,6 +1,4 @@
-﻿using System;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Model.Static
 {
@@ -11,11 +9,6 @@ namespace Model.Static
 
         public static float KoofHeightY = .8f;
         public static float KoofWeightX = .5f;
-        
-        public enum Nears
-        {
-            W, SW, SE, E, NE, NW
-        }
 
         public static Vector2[] Neighbors =
         {
@@ -66,12 +59,8 @@ namespace Model.Static
                 map[y][x].Nears[0] = map[y][x - 1];
             }
             //East
-            if (x + 1 < GameMetrics.SizeMapX)
+            if (x + 1 < SizeMapX)
             {
-                Debug.Log(map[y][x]);
-                Debug.Log(map[y][x].Nears);
-                Debug.Log(map[y][x].Nears[3]);
-                Debug.Log(map[y][x + 1]);
                 map[y][x].Nears[3] = map[y][x + 1];
             }
             //Shift left
@@ -89,7 +78,7 @@ namespace Model.Static
                     }
                 }
 
-                if (y + 1 < GameMetrics.SizeMapY)
+                if (y + 1 < SizeMapY)
                 {
                     //North-West
                     map[y][x].Nears[4] = map[y + 1][x];
@@ -110,19 +99,19 @@ namespace Model.Static
                     map[y][x].Nears[2] = map[y - 1][x];
 
                     //South-East
-                    if (x + 1 < GameMetrics.SizeMapX)
+                    if (x + 1 < SizeMapX)
                     {
                         map[y][x].Nears[1] = map[y - 1][x + 1];
                     }
                 }
 
-                if (y + 1 < GameMetrics.SizeMapY)
+                if (y + 1 < SizeMapY)
                 {
                     //North-West
                     map[y][x].Nears[5] = map[y + 1][x];
 
                     //North-East
-                    if (x + 1 < GameMetrics.SizeMapX)
+                    if (x + 1 < SizeMapX)
                     {
                         map[y][x].Nears[4] = map[y + 1][x + 1];
                     }

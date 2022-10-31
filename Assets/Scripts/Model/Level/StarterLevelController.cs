@@ -1,4 +1,5 @@
-﻿using Model.Level;
+﻿using Model.Gun;
+using Model.Level;
 using Scriptables;
 using UnityEngine;
 using View.Game;

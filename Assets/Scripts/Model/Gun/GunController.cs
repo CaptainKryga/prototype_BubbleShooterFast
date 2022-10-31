@@ -1,16 +1,14 @@
-using Controller;
 using Controller.CustomInput;
 using Model.Level;
 using Scriptables;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Model
 {
     public class GunController : MonoBehaviour
     {
         [SerializeField] private DataGame _dataGame;
-        [SerializeField] private LevelControllerBase _levelControllerBase;
+        private LevelControllerBase _levelController;
 
         [SerializeField] private CustomInputBase _customInputBase;
         
@@ -47,6 +45,9 @@ namespace Model
 
         public void InputMouse(bool flag, Vector2 mousePosition)
         {
+            if (!_levelController.IsPlay)
+                return;
+            
             Debug.Log("click");
             if (flag)
             {
@@ -62,7 +63,7 @@ namespace Model
         private void GenNewBullet()
         {
             bullet = Instantiate(_bullet, _gunPoint.position, Quaternion.identity, _gunPoint);
-            bullet.Init(_levelControllerBase);
+            bullet.Init(_levelController);
             bullet.Color = _dataGame.Colors[_queue[_colorId++]];
             if (_colorId >= _queue.Length) _colorId = 0;
         }

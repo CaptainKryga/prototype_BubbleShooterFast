@@ -3616,7 +3616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e005b6c145c84719be89f519aab9116b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starterLevelBase: {fileID: 5970727292473752538}
+  _starterLevelBase: {fileID: 5970727292473752538}
   _starterGunBase: {fileID: 381784588}
   _gameOverPoint: {fileID: 559415594}
 --- !u!1 &8151380777470090418
